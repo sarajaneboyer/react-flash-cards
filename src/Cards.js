@@ -1,8 +1,8 @@
 import React from 'react';
-import {  Button, Table, } from 'semantic-ui-react';
+import { Table, Button, } from 'semantic-ui-react';
 import Card from './Card';
 
-const Cards = ({ id, front, back, }) => (
+const Cards = props => (
   <Table celled padded>
     <Table.Header>
       <Table.Row>
@@ -13,8 +13,7 @@ const Cards = ({ id, front, back, }) => (
     </Table.Header>
 
     <Table.Body>
-      {
-        cards.map( card => (
+      {props.cards.map(card => (
           <Card key={card.id} {...card} />
         ))
       };
