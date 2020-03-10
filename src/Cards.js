@@ -16,7 +16,7 @@ const Cards = props => (
       {props.cards.map(card => (
           <Card key={card.id} {...card} />
         ))
-      };
+      }
     </Table.Body>
   </Table>
 );

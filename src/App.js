@@ -13,16 +13,35 @@ class App extends Component {
     ],
   };
 
+  getId = () => {
+    return Math.floor((1 + Math.random()) * 10000);
+  };
+
+  addCard = (cardData) => {
+    let card = { id: this.getId(), ...cardData, };
+    this.setState({ cards: [card, ...this.state.cards], });
+  };
+
+
+  deleteCard = (id) => {
+    console.log('delete clicked');
+    const cards = this.state.cards.filter( card => {
+      if (card.id !== id)
+        return card
+    });
+    this.setState({ cards: [...cards], });
+  };
+
   render() {
     return (
       <Container style={{ paddingTop: "25px" }}>
         <Header as="h1">Flash Cards</Header>
         <br />
-        <CardForm />
+        <CardForm addCard={this.addCard} deleteCard={this.deleteCard} />
         <br />
         <Cards cards={this.state.cards} />
       </Container>
-    );
+    )
   }
 }
 

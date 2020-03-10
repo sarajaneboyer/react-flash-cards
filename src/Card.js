@@ -12,7 +12,7 @@ const Card = ({ id, front, back, showingBack, }) => {
         <Button color="blue">Edit</Button>
       </Table.Cell>
     </Table.Row>
-  )
+  );
 };
 
 

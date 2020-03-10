@@ -6,7 +6,9 @@ class CardForm extends React.Component{
 
   handleSubmit = (e) => {
     e.preventDefault();
-
+    // console.log('submit clicked')
+    this.props.addCard(this.state);
+    this.setState( {front: '', back: '', });
   };
 
   handleChange = (e) => {
